@@ -23,12 +23,12 @@ view: custos {
   }
 
   dimension: codigo_de_apresentacao {
-    type: number
+    type: string
     sql: ${TABLE}."codigo_de_apresentacao" ;;
   }
 
   dimension: codigo_tuss {
-    type: number
+    type: string
     sql: ${TABLE}."codigo_tuss" ;;
   }
 
@@ -68,7 +68,7 @@ view: custos {
   }
 
   dimension: valor {
-    type: string
+    type: number
     sql: ${TABLE}."valor" ;;
   }
 
