@@ -2,6 +2,7 @@ view: custos {
   sql_table_name: prestadores.custos ;;
 
   dimension_group: _fivetran_synced {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -16,6 +17,7 @@ view: custos {
   }
 
   dimension: _row {
+    hidden: yes
     type: number
     sql: ${TABLE}."_row" ;;
   }
