@@ -6,7 +6,7 @@ explore: custos {
 
   join: comparacao {
     type: left_outer
-    sql_on:${custos.codigo_tuss} = ${comparacao.codigo_tuss} ;;
+    sql_on:${custos.codigo_tuss} = ${comparacao.codigo_tuss} and ${custos.tipo} = ${comparacao.tipo} ;;
     relationship: one_to_one
   }
 
