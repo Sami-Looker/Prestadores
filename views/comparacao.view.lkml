@@ -1,6 +1,6 @@
-view: custos {
-  label: "Valores Negociados"
-  sql_table_name: prestadores.custos ;;
+view: comparacao {
+  label: "Comparativo"
+  sql_table_name: prestadores.comparacao ;;
 
   dimension_group: _fivetran_synced {
     hidden: yes
