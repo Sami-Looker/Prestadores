@@ -80,4 +80,19 @@ view: comparacao {
     type: count
     drill_fields: []
   }
+
+  measure: sum_valor {
+    type: sum
+    sql: ${valor} ;;
+    html:<span>R$</span> {{ rendered_value }} ;;
+    drill_fields: [codigo_tuss]
+  }
+
+  measure: avg_valor {
+    type: average
+    sql: ${valor} ;;
+    drill_fields: [codigo_tuss]
+    value_format_name: decimal_1
+    html:<span>R$</span> {{ rendered_value }} ;;
+  }
 }
