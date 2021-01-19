@@ -62,11 +62,19 @@ view: custos {
   }
 
   dimension: prestador {
+    label: "Prestador Contratado"
     type: string
     sql: ${TABLE}."prestador" ;;
   }
 
+  dimension: prestador2 {
+    label: "Prestador em Análise"
+    type: string
+    sql: ${comparacao.prestador} ;;
+  }
+
   dimension: tipo {
+    label: "Tipo de Taxa"
     type: string
     sql: ${TABLE}."tipo" ;;
   }
@@ -74,6 +82,12 @@ view: custos {
   dimension: valor {
     type:number
     sql: ${TABLE}."valor" ;;
+  }
+
+  dimension: valor2 {
+    label: "Valor em Análise"
+    type:number
+    sql: ${comparacao.valor} ;;
   }
 
   measure: count {
@@ -91,6 +105,23 @@ view: custos {
   measure: avg_valor {
     type: average
     sql: ${valor} ;;
+    drill_fields: [codigo_tuss]
+    value_format_name: decimal_1
+    html:<span>R$</span> {{ rendered_value }} ;;
+  }
+
+  measure: sum_valor2 {
+    label: "Sum Valor em Análise"
+    type: sum
+    sql: ${comparacao.valor} ;;
+    html:<span>R$</span> {{ rendered_value }} ;;
+    drill_fields: [codigo_tuss]
+  }
+
+  measure: avg_valor2 {
+    label: "Avg Valor em Análise"
+    type: average
+    sql: ${comparacao.valor} ;;
     drill_fields: [codigo_tuss]
     value_format_name: decimal_1
     html:<span>R$</span> {{ rendered_value }} ;;

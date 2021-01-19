@@ -24,21 +24,25 @@ view: comparacao {
   }
 
   dimension: codigo_de_apresentacao {
+    hidden: yes
     type: string
     sql: ${TABLE}."codigo_de_apresentacao" ;;
   }
 
   dimension: codigo_tuss {
+    hidden: yes
     type: string
     sql: ${TABLE}."codigo_tuss" ;;
   }
 
   dimension: descricao_do_pacote {
+    hidden: yes
     type: string
     sql: ${TABLE}."descricao_do_pacote" ;;
   }
 
   dimension: descricao_tuss {
+    hidden: yes
     type: string
     sql: ${TABLE}."descricao_tuss" ;;
   }
@@ -62,26 +66,31 @@ view: comparacao {
   }
 
   dimension: prestador {
+    hidden: yes
     type: string
     sql: ${TABLE}."prestador" ;;
   }
 
   dimension: tipo {
+    hidden: yes
     type: string
     sql: ${TABLE}."tipo" ;;
   }
 
   dimension: valor {
+    hidden: yes
     type:number
     sql: ${TABLE}."valor" ;;
   }
 
   measure: count {
+    hidden: yes
     type: count
     drill_fields: []
   }
 
   measure: sum_valor {
+    hidden: yes
     type: sum
     sql: ${valor} ;;
     html:<span>R$</span> {{ rendered_value }} ;;
@@ -89,6 +98,7 @@ view: comparacao {
   }
 
   measure: avg_valor {
+    hidden: yes
     type: average
     sql: ${valor} ;;
     drill_fields: [codigo_tuss]
