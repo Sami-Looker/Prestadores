@@ -44,16 +44,19 @@ view: comparacao {
   }
 
   dimension: exclui {
+    hidden: yes
     type: string
     sql: ${TABLE}."exclui" ;;
   }
 
   dimension: inclui {
+    hidden: yes
     type: string
     sql: ${TABLE}."inclui" ;;
   }
 
   dimension: observacoes_gerais {
+    hidden: yes
     type: string
     sql: ${TABLE}."observacoes_gerais" ;;
   }
