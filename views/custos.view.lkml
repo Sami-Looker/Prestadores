@@ -1,5 +1,5 @@
 view: custos {
-  label: "Valores Negociados"
+  label: "Prestadores Credenciados"
   sql_table_name: prestadores.custos ;;
 
   dimension_group: _fivetran_synced {
@@ -80,6 +80,7 @@ view: custos {
   }
 
   dimension: valor {
+    label: "Valor Contratado"
     type:number
     sql: ${TABLE}."valor" ;;
   }
