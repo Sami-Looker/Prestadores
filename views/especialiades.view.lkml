@@ -58,8 +58,9 @@ view: especialiades {
     sql: ${atendimento.regime_de_atendimento} ;;
   }
 
-  measure: count {
-    type: count
+  measure: count{
+    sql:  ${TABLE}."especialidades" ;;
+    type: count_distinct
     drill_fields: []
   }
 }
