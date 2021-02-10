@@ -5,12 +5,6 @@ include: "/views/**/*.view"
 explore: custos {
   label: "Prestadores Credenciados"
 
-  join: comparacao {
-    type: left_outer
-    sql_on:${custos.codigo_tuss} = ${comparacao.codigo_tuss} and ${custos.tipo} = ${comparacao.tipo} ;;
-    relationship: one_to_one
-  }
-
   join: rol {
     type: full_outer
     sql_on:${custos.codigo_tuss} = ${rol.codigo_tab_22};;

@@ -21,6 +21,11 @@ view: rol {
     sql: ${TABLE}."correlacao_sim_nao_" ;;
   }
 
+  dimension: descricao {
+    type: string
+    sql: ${TABLE}."descricao" ;;
+  }
+
   dimension: dut {
     type: string
     sql: ${TABLE}."dut" ;;
