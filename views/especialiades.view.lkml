@@ -58,6 +58,29 @@ view: especialiades {
     sql: ${atendimento.regime_de_atendimento} ;;
   }
 
+  dimension: plano_cobertura {
+    type: string
+    sql: Case
+        when ${sami_sol_enfermaria} = 'Sim' and ${sami_sol_apartamento}= 'Não' THEN 'Sami Sol Enfermaria'
+        when ${sami_sol_apartamento} = 'Sim' and ${sami_sol_enfermaria} = 'Não' THEN 'Sami Sol Apartamento'
+        when ${sami_sol_enfermaria} = 'Sim' AND  ${sami_sol_apartamento} = 'Sim' THEN 'Sami Sol Enfermaria e Apartamento'
+    else 'Não Atende'
+    END
+    ;;
+  }
+
+   dimension: sami_sol_apartamento {
+    hidden: yes
+    type: string
+    sql: ${TABLE}."sami_sol_apartamento" ;;
+  }
+
+  dimension: sami_sol_enfermaria {
+    hidden: yes
+    type: string
+    sql: ${TABLE}."sami_sol_enfermaria" ;;
+  }
+
   measure: count{
     sql:  ${TABLE}."especialidades" ;;
     type: count_distinct
