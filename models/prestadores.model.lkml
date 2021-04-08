@@ -14,10 +14,4 @@ explore: custos {
 
   explore: especialiades {
     label: "Especialidades"
-
-    join: atendimento {
-      type: left_outer
-      sql_on:${especialiades.nome} = ${atendimento.nome};;
-      relationship: many_to_many
-    }
 }

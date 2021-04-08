@@ -55,7 +55,7 @@ view: especialiades {
 
   dimension: regime_de_atendimento {
     type: string
-    sql: ${atendimento.regime_de_atendimento} ;;
+    sql: ${TABLE}."regime_de_atendimento" ;;
   }
 
   dimension: plano_cobertura {
