@@ -1,5 +1,4 @@
 connection: "sami_main"
-persist_for: "6 hours"
 include: "/views/**/*.view"
 
 explore: custos {
