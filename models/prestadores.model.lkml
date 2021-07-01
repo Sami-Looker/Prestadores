@@ -11,6 +11,14 @@ explore: custos {
   }
 }
 
-  explore: especialiades {
+ explore: especialiades {
     label: "Especialidades"
+    persist_for: "6 hours"
+
+    join: planos {
+      type: left_outer
+      sql_on:${especialiades.produto} = ${planos.acesso};;
+      relationship: many_to_many
+    }
+
 }
