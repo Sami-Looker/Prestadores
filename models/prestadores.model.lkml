@@ -13,7 +13,6 @@ explore: custos {
 
  explore: especialiades {
     label: "Especialidades"
-    persist_for: "12 hours"
 
     join: planos {
       type: left_outer
