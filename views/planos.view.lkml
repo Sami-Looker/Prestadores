@@ -4,7 +4,8 @@ view: planos {
   dimension: acesso {
     primary_key: yes
     type: string
-    sql: ${TABLE}."acesso" ;;
+    sql: CASE WHEN ${TABLE}."acesso" = 'Antares e Antares+' THEN 'Antares e Antare+'
+    ELSE ${TABLE}."acesso" END;;
   }
 
   dimension: classe {

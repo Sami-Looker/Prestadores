@@ -55,12 +55,12 @@ view: especialiades {
 
   dimension: regime_de_atendimento {
     type: string
-    sql: ${TABLE}."regime_de_atendimento" ;;
+    sql: ${TABLE}."REGIME DE ATENDIMENTO" ;;
   }
 
   dimension: produto {
     type: string
-    sql: ${TABLE}."produto";;
+    sql: ${TABLE}."PRODUTO";;
   }
 
   dimension: produto_filtro {
