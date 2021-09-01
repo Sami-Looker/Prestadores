@@ -50,7 +50,7 @@ view: especialiades {
 
   dimension: tipo {
     type: string
-    sql: ${TABLE}."tipo" ;;
+    sql: ${TABLE}."Tipo" ;;
   }
 
   dimension: regime_de_atendimento {
