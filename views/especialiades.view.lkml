@@ -8,9 +8,9 @@ view: especialiades {
     sql: ${TABLE}."id" ;;
   }
 
-  dimension: bairro {
+  dimension: bairro_unidade {
     type: string
-    sql: ${TABLE}."bairro" ;;
+    sql: ${TABLE}."bairro_unidade" ;;
   }
 
   dimension: endereco {
@@ -50,23 +50,17 @@ view: especialiades {
 
   dimension: tipo {
     type: string
-    sql: ${TABLE}."tipo" ;;
+    sql: ${TABLE}."Tipo" ;;
   }
 
   dimension: regime_de_atendimento {
     type: string
-    sql: ${TABLE}."regime_de_atendimento" ;;
+    sql: ${TABLE}."REGIME DE ATENDIMENTO" ;;
   }
 
-  dimension: plano_cobertura {
+  dimension: produto {
     type: string
-    sql: Case
-        when ${sami_sol_enfermaria} = 'Sim' and ${sami_sol_apartamento}= 'Não' THEN 'Sami Sol Enfermaria'
-        when ${sami_sol_apartamento} = 'Sim' and ${sami_sol_enfermaria} = 'Não' THEN 'Sami Sol Apartamento'
-        when ${sami_sol_enfermaria} = 'Sim' AND  ${sami_sol_apartamento} = 'Sim' THEN 'Sami Sol Enfermaria e Apartamento'
-    else 'Não Atende'
-    END
-    ;;
+    sql: ${TABLE}."PRODUTO";;
   }
 
   dimension: telefone {
@@ -76,14 +70,11 @@ view: especialiades {
 
    dimension: sami_sol_apartamento {
     hidden: yes
-    type: string
-    sql: ${TABLE}."sami_sol_apartamento" ;;
-  }
+    }
 
-  dimension: sami_sol_enfermaria {
-    hidden: yes
+  dimension: produto_filtro {
     type: string
-    sql: ${TABLE}."sami_sol_enfermaria" ;;
+    sql: ${planos.produto} ;;
   }
 
   measure: count{
