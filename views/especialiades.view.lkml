@@ -69,6 +69,11 @@ view: especialiades {
     ;;
   }
 
+  dimension: telefone {
+    type: string
+    sql: ${TABLE}."TELFONE " ;;
+  }
+
    dimension: sami_sol_apartamento {
     hidden: yes
     type: string
