@@ -63,6 +63,15 @@ view: especialiades {
     sql: ${TABLE}."PRODUTO";;
   }
 
+  dimension: telefone {
+    type: string
+    sql: ${TABLE}."TELFONE " ;;
+  }
+
+   dimension: sami_sol_apartamento {
+    hidden: yes
+    }
+
   dimension: produto_filtro {
     type: string
     sql: ${planos.produto} ;;
