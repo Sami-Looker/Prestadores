@@ -7,7 +7,7 @@ view: especialiades {
     type: string
     sql: ${TABLE}."id" ;;
   }
-
+#
   dimension: bairro_unidade {
     type: string
     sql: ${TABLE}."Bairro/ Unidade" ;;
