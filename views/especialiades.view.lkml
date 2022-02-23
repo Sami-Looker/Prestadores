@@ -10,7 +10,7 @@ view: especialiades {
 
   dimension: bairro_unidade {
     type: string
-    sql: ${TABLE}."bairro_unidade" ;;
+    sql: ${TABLE}."Bairro/ Unidade" ;;
   }
 
   dimension: endereco {
@@ -35,7 +35,7 @@ view: especialiades {
 
   dimension: nivel_de_atencao {
     type: string
-    sql: ${TABLE}."nivel_de_atencao" ;;
+    sql: ${TABLE}."NÍVEL DE ATENÇÃO" ;;
   }
 
   dimension: nome {
@@ -66,6 +66,11 @@ view: especialiades {
   dimension: produto_filtro {
     type: string
     sql: ${planos.produto} ;;
+  }
+
+  dimension: contrato {
+    type: string
+    sql: ${TABLE}."Contrato" ;;
   }
 
   measure: count{
