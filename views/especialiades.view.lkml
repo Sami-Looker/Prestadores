@@ -7,7 +7,7 @@ view: especialiades {
     type: string
     sql: ${TABLE}."id" ;;
   }
-#
+
   dimension: bairro_unidade {
     type: string
     sql: ${TABLE}."Bairro/ Unidade" ;;
@@ -45,7 +45,9 @@ view: especialiades {
 
   dimension: regiao {
     type: string
-    sql: ${TABLE}."regiao" ;;
+    sql: CASE WHEN ${TABLE}."regiao" = 'sul' then 'Sul'
+              WHEN ${TABLE}."regiao" = 'norte' then 'Norte'
+              ELSE ${TABLE}."regiao" END;;
   }
 
   dimension: tipo {
@@ -82,9 +84,18 @@ view: especialiades {
     sql: ${TABLE}."Contrato" ;;
   }
 
-  measure: count{
+  measure: count_especialidades{
+    group_label: "Contagem de especialidades"
     sql:  ${TABLE}."especialidades" ;;
     type: count_distinct
     drill_fields: []
   }
+
+  measure: count_parceiros{
+    group_label: "Contagem de parceiros"
+    sql:  ${TABLE}."nome" ;;
+    type: count_distinct
+    drill_fields: []
+  }
+
 }
