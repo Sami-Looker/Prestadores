@@ -1,5 +1,5 @@
 view: especialiades {
-  sql_table_name: prestadores.especialiades ;;
+  sql_table_name: sandbox.especialiades ;;
 
   dimension: id {
     primary_key: yes
@@ -10,7 +10,7 @@ view: especialiades {
 
   dimension: bairro_unidade {
     type: string
-    sql: ${TABLE}."Bairro/ Unidade" ;;
+    sql: ${TABLE}."Bairro/Unidade" ;;
   }
 
   dimension: endereco {
@@ -67,7 +67,7 @@ view: especialiades {
 
   dimension: telefone {
     type: string
-    sql: ${TABLE}."TELFONE " ;;
+    sql: ${TABLE}."TELEFONE" ;;
   }
 
    dimension: sami_sol_apartamento {
