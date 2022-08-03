@@ -84,6 +84,11 @@ view: especialiades {
     sql: ${TABLE}."Contrato" ;;
   }
 
+  dimension: divulgacao_app {
+    type: string
+    sql: ${TABLE}."DIVULGAÇÃO DO APP" ;;
+  }
+
   measure: count_especialidades{
     group_label: "Contagem de especialidades"
     sql:  ${TABLE}."especialidades" ;;
