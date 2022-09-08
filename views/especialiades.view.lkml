@@ -89,6 +89,11 @@ view: especialiades {
     sql: ${TABLE}."DIVULGAÇÃO DO APP" ;;
   }
 
+  dimension: analista_resp {
+    type: string
+    sql: ${TABLE}."ANALISTA RESPONSAVEL" ;;
+  }
+
   measure: count_especialidades{
     group_label: "Contagem de especialidades"
     sql:  ${TABLE}."especialidades" ;;
