@@ -94,6 +94,18 @@ view: especialiades {
     sql: ${TABLE}."ANALISTA RESPONSAVEL" ;;
   }
 
+  dimension: dt_inclusao {
+    label: "Dt Inclusão Especialidade"
+    type: string
+    sql: ${TABLE}."INCLUSÃO DE ESPECIALIDADE" ;;
+  }
+
+  dimension: dt_exclusao {
+    label: "Dt Exclusão Especialidade"
+    type: string
+    sql: ${TABLE}."EXCLUSÃO DE ESPECIALIDADE" ;;
+  }
+
   measure: count_especialidades{
     group_label: "Contagem de especialidades"
     sql:  ${TABLE}."especialidades" ;;
